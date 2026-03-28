@@ -8,6 +8,7 @@ description = "A package built for generating passwords"
 version = "0.1.2"
 authors = [
   { name="Natt Hong", email="nmh6063@nyu.edu" },
+  { name="Cary Ho", email="ch4049@nyu.edu" },
 ]
 license = { file = "LICENSE" }
 readme = "README.md"
