@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "PyPasserer"
 description = "A package built for generating passwords"
-version = "1.0.1"
+version = "1.0.3"
 authors = [
   { name="Natt Hong", email="nmh6063@nyu.edu" },
   { name="Cary Ho", email="ch4049@nyu.edu" },
