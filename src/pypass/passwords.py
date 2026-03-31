@@ -77,3 +77,51 @@ def validate_password(
         return False
     
     return True
+
+def password_strength(
+    password: str
+    ) -> float:
+    """
+    Give a strength value for a password based on the amount of time it takes to crack.
+    Caps strength at 10,000 years to crack, as it's reasonable to assume password is very unlikely to crack by then
+    """
+    #Roughly 95 unique keys, 120k guesses per second
+    #3784320000000 guesses per year, cap strength at 10,000 years to crack
+    if " " in password:
+        raise Exception("Spaces not allowed in strings")
+    pool = 0
+    for c in password:
+        if c.islower() and c.isalpha():
+            pool += 26
+            break
+    for c in password:
+        if c.isupper() and c.isalpha():
+            pool += 26
+            break
+    for c in password:
+        if c.isdigit():
+            pool += 10
+            break;
+    if any(not c.isalnum() for c in password):
+        pool += 33
+    combos = pow(pool, len(password))
+    strengthVal = combos/(3784320000000.0 * 10000)
+    if strengthVal > 1.0:
+        strengthVal = 1.0
+    return round(strengthVal, 5)
+
+def password_save(
+    password: str,
+    path: str = "saved_passwords.txt"
+    ) -> bool:
+    """
+    Saves a given password at a directory.
+    Returns true on success and false on failure.
+    """
+    try:
+        file = open(path, "a")
+        file.write(password + "\n")
+        file.close()
+        return True
+    except OSError:
+        return False

@@ -1,7 +1,8 @@
 import string
 import pytest
+import os
 
-from pypass.passwords import generate_password, validate_password
+from pypass.passwords import generate_password, validate_password, password_strength, password_save
 
 def test_generate_password_returns_string():
     password = generate_password()
@@ -85,6 +86,59 @@ def test_validate_password_missing_digits():
 
 
 def test_validate_password_invalid_type():
-    import pytest
     with pytest.raises(TypeError):
         validate_password(12345)
+
+def test_password_strength_valid_all():
+    password = "Abc123!"
+    assert password_strength(password) == 0.00185
+
+def test_password_strength_valid_upper_only():
+    password = "ABCDEFGHIJ"
+    assert password_strength(password) == 0.00373
+
+def test_password_strength_valid_lower_only():
+    password = "abcdefghij"
+    assert password_strength(password) == 0.00373
+
+def test_password_strength_valid_number_only():
+    password = "01234567898765"
+    assert password_strength(password) == 0.00264
+
+def test_password_strength_valid_symbol_only():
+    password = "!@#$%^&*()"
+    assert password_strength(password) == 0.04047
+
+def test_password_strength_valid_upper_lower_only():
+    password = "aBcDeFgH"
+    assert password_strength(password) == 0.00141
+
+def test_password_strength_valid_upper_lower_number_only():
+    password = "Abc123de"
+    assert password_strength(password) == 0.00577
+
+def test_password_strength_spaces():
+    password = "Ab c123!"
+    with pytest.raises(Exception, match="Spaces not allowed in strings"):
+        password_strength(password)
+
+def test_password_save_default():
+    assert password_save(
+        password="Abc123!"
+    ) is True
+    os.remove("saved_passwords.txt")
+
+def test_password_save_to_path():
+    path="saved_passwords_path.txt"
+    assert password_save(
+        password="Abc123!",
+        path=path
+    ) is True
+    os.remove("saved_passwords_path.txt")
+
+def test_password_save_to_faulty_path():
+    path="test/saved_passwords_path.txt"
+    assert password_save(
+        password="Abc123!",
+        path=path
+    ) is False
