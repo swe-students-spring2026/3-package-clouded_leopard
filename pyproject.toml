@@ -9,6 +9,7 @@ version = "0.1.2"
 authors = [
   { name="Natt Hong", email="nmh6063@nyu.edu" },
   { name="Cary Ho", email="ch4049@nyu.edu" },
+  { name="Hanson Huang", email = "zh3089@nyu.edu" }
 ]
 license = { file = "LICENSE" }
 readme = "README.md"
