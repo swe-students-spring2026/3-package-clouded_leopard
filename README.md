@@ -1,10 +1,10 @@
-# PyPass 🔐
+# PyPasser 🔐
 
 [![Build Status](https://github.com/swe-students-spring2026/3-package-clouded_leopard/actions/workflows/main.yml/badge.svg)](https://github.com/swe-students-spring2026/3-package-clouded_leopard/actions)
 
 ## 📦 Description
 
-PyPass is a lightweight and fun Python package for generating, validating, and analyzing passwords.
+PyPasser is a lightweight and fun Python package for generating, validating, and analyzing passwords.
 
 It provides developers with simple tools to:
 - generate secure passwords
@@ -18,7 +18,7 @@ This package is designed as a learning exercise in building, testing, and distri
 
 ## 🚀 Installation
 
-pip install PyPass
+pip install PyPasser
 
 PyPI: (https://test.pypi.org/project/PyPasser/)
 
@@ -28,7 +28,7 @@ PyPI: (https://test.pypi.org/project/PyPasser/)
 
 ### Generate a Password
 
-from pypass.passwords import generate_password
+from pypasser.passwords import generate_password
 
 password = generate_password(length=12)
 print(password)
@@ -37,7 +37,7 @@ print(password)
 
 ### Validate a Password
 
-from pypass.passwords import validate_password
+from pypasser.passwords import validate_password
 
 validate_password("Abc123!")  # True
 validate_password("abc")      # False
@@ -46,7 +46,7 @@ validate_password("abc")      # False
 
 ### Check Password Strength
 
-from pypass.passwords import password_strength
+from pypasser.passwords import password_strength
 
 strength = password_strength("Abc123!")
 print(strength)
@@ -55,7 +55,7 @@ print(strength)
 
 ### Save a Password
 
-from pypass.passwords import password_save
+from pypasser.passwords import password_save
 
 password_save("Abc123!")
 
