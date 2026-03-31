@@ -20,7 +20,7 @@ This package is designed as a learning exercise in building, testing, and distri
 
 pip install PyPasserer
 
-PyPI: (https://pypi.org/project/PyPasserer/1.0.0/)
+PyPI: (https://pypi.org/project/PyPasserer/)
 
 ---
 
