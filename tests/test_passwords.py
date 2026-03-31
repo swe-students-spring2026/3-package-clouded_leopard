@@ -2,7 +2,7 @@ import string
 import pytest
 import os
 
-from pypasser.passwords import generate_password, validate_password, password_strength, password_save
+from pypasserer.passwords import generate_password, validate_password, password_strength, password_save
 
 def test_generate_password_returns_string():
     password = generate_password()

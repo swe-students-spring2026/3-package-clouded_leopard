@@ -3,9 +3,9 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "PyPass"
+name = "PyPasserer"
 description = "A package built for generating passwords"
-version = "0.1.2"
+version = "1.0.1"
 authors = [
   { name="Natt Hong", email="nmh6063@nyu.edu" },
   { name="Cary Ho", email="ch4049@nyu.edu" },
@@ -13,7 +13,7 @@ authors = [
 ]
 license = { file = "LICENSE" }
 readme = "README.md"
-keywords = ["python", "package", "build", "tutorial"]
+keywords = ["python", "package", "build", "passwords"]
 requires-python = ">=3.7"
 classifiers = [
     "Programming Language :: Python :: 3",
@@ -28,7 +28,4 @@ dev = ["pytest"]
 [project.urls]
 "Homepage" = "https://github.com/swe-students-spring2026/3-package-clouded_leopard"
 "Repository" = "https://github.com/swe-students-spring2026/3-package-clouded_leopard.git"
-"Bug Tracker" = "https://github.com/nyu-software-engineering/python-package-example/issues"
-
-[project.scripts]
-examplepackagefb1258 = "examplepackagefb1258.__main__:main"
+"Bug Tracker" = "https://github.com/swe-students-spring2026/3-package-clouded_leopard/issues"
