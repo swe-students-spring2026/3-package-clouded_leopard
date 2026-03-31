@@ -1,4 +1,4 @@
-from pypass.passwords import (
+from pypasser.passwords import (
     generate_password,
     password_save,
     password_strength,
