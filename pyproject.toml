@@ -3,9 +3,9 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "PyPasser"
+name = "PyPasserer"
 description = "A package built for generating passwords"
-version = "1.0.0"
+version = "1.0.1"
 authors = [
   { name="Natt Hong", email="nmh6063@nyu.edu" },
   { name="Cary Ho", email="ch4049@nyu.edu" },
