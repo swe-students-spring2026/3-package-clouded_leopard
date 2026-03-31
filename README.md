@@ -17,48 +17,48 @@ This package is designed as a learning exercise in building, testing, and distri
 ---
 
 ## 🚀 Installation
-
+```
 pip install PyPass
 
 PyPI: (https://test.pypi.org/project/PyPasser/)
-
+```
 ---
 
 ## 🧪 Usage
 
 ### Generate a Password
-
+```
 from pypass.passwords import generate_password
 
 password = generate_password(length=12)
 print(password)
-
+```
 ---
 
 ### Validate a Password
-
+```
 from pypass.passwords import validate_password
 
 validate_password("Abc123!")  # True
 validate_password("abc")      # False
-
+```
 ---
 
 ### Check Password Strength
-
+```
 from pypass.passwords import password_strength
 
 strength = password_strength("Abc123!")
 print(strength)
-
+```
 ---
 
 ### Save a Password
-
+```
 from pypass.passwords import password_save
 
 password_save("Abc123!")
-
+```
 ---
 
 ## 📚 Functions
@@ -95,7 +95,7 @@ See examples/demo.py for a complete script demonstrating all features.
 ---
 
 ## 🛠️ Development Setup
-
+```
 git clone https://github.com/swe-students-spring2026/3-package-clouded_leopard.git
 cd 3-package-clouded_leopard
 
@@ -103,17 +103,17 @@ pipenv install
 pipenv install -e .
 
 pipenv run pytest
-
+```
 ---
 
 ## 🔁 Workflow (Contributing)
-
+```
 1. git checkout -b feature/your-feature-name
 2. git add .
 3. git commit -m "Describe your changes"
 4. git push -u origin feature/your-feature-name
 5. Open a Pull Request
-
+```
 ---
 
 ## 👥 Contributors
