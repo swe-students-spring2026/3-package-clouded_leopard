@@ -1,7 +1,7 @@
 import string
 import pytest
 
-from pypass.passwords import generate_password
+from pypass.passwords import generate_password, validate_password
 
 def test_generate_password_returns_string():
     password = generate_password()
@@ -64,3 +64,27 @@ def test_generate_password_raises_if_length_not_positive():
     with pytest.raises(ValueError, match="length must be greater than 0"):
         generate_password(length=0)
 
+def test_validate_password_valid():
+    password = "Abc123!"
+    assert validate_password(password, min_length=6, require_symbols=True) is True
+
+
+def test_validate_password_too_short():
+    password = "Ab1!"
+    assert validate_password(password, min_length=8) is False
+
+
+def test_validate_password_missing_upper():
+    password = "abc123!"
+    assert validate_password(password, require_uppercase=True) is False
+
+
+def test_validate_password_missing_digits():
+    password = "Abcdef!"
+    assert validate_password(password, require_digits=True) is False
+
+
+def test_validate_password_invalid_type():
+    import pytest
+    with pytest.raises(TypeError):
+        validate_password(12345)

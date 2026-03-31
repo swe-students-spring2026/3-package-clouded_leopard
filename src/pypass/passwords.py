@@ -47,3 +47,33 @@ def generate_password(
     random.shuffle(password_chars)
 
     return "".join(password_chars)
+
+def validate_password(
+    password: str,
+    min_length: int = 8,
+    require_lowercase: bool = True,
+    require_uppercase: bool = True,
+    require_digits: bool = True,
+    require_symbols: bool = True,
+) -> bool:
+    "Validate whether the password meets given requirements"
+
+    if not isinstance(password, str):
+        raise TypeError("password must be a string")
+    
+    if len(password) < min_length:
+        return False
+    
+    if require_lowercase and not any(ch in string.ascii_lowercase for ch in password):
+        return False
+
+    if require_uppercase and not any(ch in string.ascii_uppercase for ch in password):
+        return False
+
+    if require_digits and not any(ch in string.digits for ch in password):
+        return False
+
+    if require_symbols and not any(ch in string.punctuation for ch in password):
+        return False
+    
+    return True
